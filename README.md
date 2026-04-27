@@ -6,9 +6,9 @@ Aquest repositori conté el frontend del projecte **Architour**, una pàgina web
 
 El projecte presenta diferents itineraris per barris i ciutats, amb una navegació intuïtiva, contingut multimèdia i suport multilingüe.
 
-## 🌐 Web online
+## Web online
 
-[Visitar Architour]([https://renatacavilli.github.io/architour/](https://architour.es/en/))
+[Visitar Architour](https://architour.es/en/)
 
 
 ## Estructura del projecte
