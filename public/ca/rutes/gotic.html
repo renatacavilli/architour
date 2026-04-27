@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Gòtic - Architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/java/reserves-modal.js"></script>
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Reserva la teva ruta — Gòtic
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                Horaris disponibles a continuació. Per reservar, selecciona l'opció que prefereixis i envia'ns un correu a architour amb la teva elecció.
+            </p>
+
+            <div class="options-grid-static">
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció A
+                        </div>
+                        <div class="option-sub-static">
+                            Anglès — 19:00 (1pax) - dijous i dissabtes - 47€ per persona
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció B
+                        </div>
+                        <div class="option-sub-static">
+                            Català o Castellà — 19:00 (1pax) - divendres - 47€ per persona
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció C
+                        </div>
+                        <div class="option-sub-static">
+                            Anglès — 19:00 (2 pax) - dilluns, dimarts, dimecres, dijous, divendres i dissabtes - 85€ per 2 persones
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció D
+                        </div>
+                        <div class="option-sub-static">
+                            Anglès — 19:00 (3 pax) - dilluns, dimarts, dimecres, dijous, divendres i dissabtes - 120€ per 3 persones
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Envieu un correu a architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Com</a></li>
+                <li><a href="../index.html#qui">Qui</a></li>
+                <li><a href="../index.html#rutes">Rutes</a></li>
+                <li><a href="../index.html#viatges">Viatges</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educació</a></li>
+                <li><a href="../index.html#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">Ruta pel Barri Gòtic</h1>
+                <p>
+                    Aquesta visita ofereix una immersió en la Barcino romana -la Barcelona d’època d’August- i en la ciutat medieval, que ha perdurat fins avui com a centre de la vida política i institucional. La ruta discorre entre els focus que configuren la trama urbana medieval i conformen els barris històrics del nucli més de la ciutat.
+                </p>
+                <p>
+                    Al llarg del recorregut, edificis emblemàtics com l’església de Santa Maria del Pi, l’església de Santa Anna, la Catedral o el Palau Reial revelen capes successives de significat arquitectònic i històric. Places i carrers tan representatius com la Plaça Sant Felip Neri, la Plaça Reial i la sempre animada Rambla, juntament amb barris tan singulars com el Call jueu, conflueixen per crear un paisatge remarcable, tot plegat, un magma d’arquitectura, història i simbolisme. 
+                </p>
+                <ul class="ruta-punts">
+                    <li>S'entrega un dossier complet de la ruta amb bibliografia i ressenyes</li>
+                    <li>Per grups reduïts amb guies arquitectes</li>
+                    <li>Durada: 2:30h</li>
+                    <li>Idiomes possibles: català, castellà i anglès</li>
+                </ul>
+                <a href="#" class="coac-button">Reserva la teva ruta</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadagotic.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Punt de trobada</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2993.4828102180077!2d2.1680152!3d41.3853201!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2f6babf6b0f%3A0x85adb6d3849fa7b7!2sFont%20de%20Canaletes!5e0!3m2!1sca!2ses!4v1772365536022!5m2!1sca!2ses"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/canaletes.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contacte</h2>
+            <h4>
+                Correu electrònic:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. Tots els drets reservats.
+        </p>
+        <p class="footer-p">
+            Disseny gràfic i web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-gotic.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

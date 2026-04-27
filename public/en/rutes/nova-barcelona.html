@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The New Barcelona - architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+    
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Book your tour — The New Barcelona
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                To book, please send an email to architour@coac.cat
+            </p>
+
+            <div class="options-grid-static">
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Available schedule:
+                        </div>
+                        <div class="option-sub-static">
+                            English — 19:00 (1pax) - Thursday and Saturday - 47€ per person
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Send email to architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Com</a></li>
+                <li><a href="../index.html#qui">Qui</a></li>
+                <li><a href="../index.html#rutes">Rutes</a></li>
+                <li><a href="../index.html#viatges">Viatges</a></li>
+                <li><a href="../index.html#studyabroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educació</a></li>
+                <li><a href="../index.html#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">The New Barcelona tour</h1>
+                <p>
+                    This itinerary juxtaposes radical contemporary architecture with the living industrial heritage of the “Catalan Manchester,” a paradigm of Barcelona’s industrial textile revolution and the ferment of a new social class: the Catalan bourgeoisie.
+                </p>
+                <p>
+                    Radiant, technologically advanced corporate glass buildings coexist with the old brick factories, now converted into vibrant museums and universities in the 22@ District, dedicated to knowledge, innovation, and new technology activities. The Forum area, the symbolic culmination of the paradigmatic Diagonal Avenue that leads to the Mediterranean, concludes the route of a new Barcelona, offering panoramic views from a rooftop terrace.  
+                </p>
+                <ul class="ruta-punts">
+                    <li>A complete dossier of the route with bibliography and reviews is provided</li>
+                    <li>For small groups with architectural guides</li>
+                    <li>Duration: 2:30h</li>
+                    <li>Available languages: Catalan, Spanish and English</li>
+                </ul>
+                <a href="#" class="coac-button">Book your tour</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadanovabcn.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Meeting point</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2992.6385662863872!2d2.1876875!3d41.403655!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a323d08431d7%3A0x7e679405ca1cddb4!2sAv.%20Diagonal%2C%20209%2C%20Sant%20Mart%C3%AD%2C%2008018%20Barcelona!5e0!3m2!1sen!2ses!4v1772366710809!5m2!1sen!2ses"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/torrenovabcn.jpeg" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contact</h2>
+            <h4>
+                Email:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. All rights reserved.
+        </p>
+        <p class="footer-p">
+            Graphic design and web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-nova-barcelona.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

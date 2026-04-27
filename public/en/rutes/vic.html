@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Vic - architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+    
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Book your tour — Vic
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                To book the route, send us an email at architour@coac.cat with your availability.
+            </p>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Send email to architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Com</a></li>
+                <li><a href="../index.html#qui">Qui</a></li>
+                <li><a href="../index.html#rutes">Rutes</a></li>
+                <li><a href="../index.html#viatges">Viatges</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educació</a></li>
+                <li><a href="../index.html#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">The Vic tour</h1>
+                <p>
+                    The route begins as an immersion into Vic’s medieval urbanism, exploring the origins of the city’s layout and its generating nodes within the urban fabric. The Industrial Revolution, particularly the textile sector, and the resulting sociology of the Catalan bourgeoisie constitute another focal point of interest. 
+                </p>
+                <p>
+                    The journey continues through Vic’s historical layers: its Roman origins as a distant palimpsest; the Baroque era as a stage for new urban and cultural projects; the scars left by the Civil War; and the vitality of contemporary architecture, including spaces like the magnificent theatre l’Atlàntida, now a new urban and cultural node. Throughout the route, the city unfolds like a living tapestry, inviting visitors to understand Vic through the territorial logic of the Plana and reflect on the city as it is today.
+                </p>
+                <ul class="ruta-punts">
+                    <li>A complete dossier of the route with bibliography and reviews is provided</li>
+                    <li>For small groups with architectural guides</li>
+                    <li>Duration: 2:30h</li>
+                    <li>Possible languages: Catalan, Spanish and English</li>
+                </ul>
+                <a href="#" class="coac-button">Book your tour</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadavic.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Meeting point</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d742.1174842266021!2d2.257556!3d41.925752300000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a5270f3c05364f%3A0x296806e3d81cc55a!2sPla%C3%A7a%20de%20Josep%20M%C3%A0rquez%2C%2008500%20Vic%2C%20Barcelona!5e0!3m2!1sen!2ses!4v1772367136135!5m2!1sen!2ses"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/josepmarquez.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contact</h2>
+            <h4>
+                Email:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. All rights reserved.
+        </p>
+        <p class="footer-p">
+            Graphic design and web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-vic.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

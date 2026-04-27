@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gothic Quarter - architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/java/reserves-modal.js"></script>
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Book your tour — The Gothic quarter
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                Schedules are available below. To book, select your preferred option and send an email to architour with your choice.
+            </p>
+
+            <div class="options-grid-static">
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció A
+                        </div>
+                        <div class="option-sub-static">
+                            English — 19:00 (1pax) - Thursdays and Saturdays - 47€ per person
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció B
+                        </div>
+                        <div class="option-sub-static">
+                            Catalan or Spanish — 19:00 (1pax) - Fridays - 47€ per person
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció C
+                        </div>
+                        <div class="option-sub-static">
+                            English — 19:00 (2 pax) - Mondays, Tuesdays, Wednesdays, Thursdays, Fridays and Saturdays - 85€ per 2 people
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opció D
+                        </div>
+                        <div class="option-sub-static">
+                            English — 19:00 (3 pax) - Mondays, Tuesdays, Wednesdays, Thursdays, Fridays and Saturdays - 120€ per 3 people
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Send email to architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Com</a></li>
+                <li><a href="../index.html#qui">Qui</a></li>
+                <li><a href="../index.html#rutes">Rutes</a></li>
+                <li><a href="../index.html#viatges">Viatges</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educació</a></li>
+                <li><a href="../index.html#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">The Gothic Quarter tour</h1>
+                <p>
+                    This tour offers an immersion into Roman Barcino -the former Barcelona- of the Augustan era, and into the medieval city that has endured to this day as a center of political and institutional life. The route winds through the key points that shaped the medieval urban fabric, connecting the historic neighborhoods of the city’s oldest quarter.
+                </p>
+                <p>
+                    Landmark buildings such as Santa Maria del Pi Church, Santa Anna Church, the Cathedral, and the Royal Palace; emblematic squares and streets like Sant Felip Neri, the Royal Square, and the ever-lively Rambla; and neighborhoods as distinctive as the Jewish Quarter all converge to create a remarkable landscape, rich in architecture, history, and meaning. 
+                </p>
+                <ul class="ruta-punts">
+                    <li>A complete dossier of the route with bibliography and reviews is provided</li>
+                    <li>For small groups with architectural guides</li>
+                    <li>Duration: 2:30h</li>
+                    <li>Possible languages: Catalan, Spanish and English</li>
+                </ul>
+                <a href="#" class="coac-button">Book your tour</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadagotic.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Punt de trobada</span>
+                <iframe
+                    src="https://www.google.com/maps?q=Pla%C3%A7a%20Nova,%20Barcelona&output=embed"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/canaletes.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contact</h2>
+            <h4>
+                Email:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. All rights reserved.
+        </p>
+        <p class="footer-p">
+            Graphic design and web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-gotic.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

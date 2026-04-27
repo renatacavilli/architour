@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Born and the Ribera quarters - architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Book your tour — The Born and the Ribera quarters
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                To book the route, send us an email at architour@coac.cat with your availability.
+            </p>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Send email to architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Com</a></li>
+                <li><a href="../index.html#qui">Qui</a></li>
+                <li><a href="../index.html#rutes">Rutes</a></li>
+                <li><a href="../index.html#viatges">Viatges</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educació</a></li>
+                <li><a href="../index.html#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">The Born and the Ribera quarters tour</h1>
+                <p>
+                    This route focuses on the medieval and specialized city of the guilds, with the austerity and splendor of Santa Maria del Mar Church at the heart of La Ribera’s Sailor Quarter, and a quintessential example of Catalan Gothic architecture. The Citadel, built under the domination of Philip V of Spain -with its archaeological remains of the Born Market, newly remodeled as a magnificent cultural center evocative of this rich history- is an important highlight of the itinerary.
+                </p>
+                <p>
+                    The powerful Gothic-Renaissance palaces along Montcada Street and the ethereal, refined Modernism of the Palau de la Música Catalana offer a complex richness that defines this ancient city. Some vivid contemporary buildings, such as the glowing multicolored roof of Santa Caterina Market, coexist harmoniously with this medieval world.
+                </p>
+                <ul class="ruta-punts">
+                    <li>A complete dossier of the route with bibliography and reviews is provided</li>
+                    <li>For small groups with architectural guides</li>
+                    <li>Duration: 2:30h</li>
+                    <li>Possible languages: Catalan, Spanish and English</li>
+                </ul>
+                <a href="#" class="coac-button">Book your tour</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadaborn2.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Meeting point</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1496.6919230844753!2d2.1757921!3d41.3874697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2fa42fbc979%3A0x9f87fcbe13d79a96!2sCarrer%20de%20Sant%20Pere%20M%C3%A9s%20Alt%2C%2012%2C%20Ciutat%20Vella%2C%2008003%20Barcelona!5e0!3m2!1sen!2ses!4v1772368072251!5m2!1sen!2ses"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/palau.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contact</h2>
+            <h4>
+                Email:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. All rights reserved.
+        </p>
+        <p class="footer-p">
+            Graphic design and web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-born-ribera.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

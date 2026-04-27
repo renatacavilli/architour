@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gótico - architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/java/reserves-modal.js"></script>
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Reserva tu ruta — El barrio Gótico (Barcelona)
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                Horarios disponibles a continuación. Para reservar, selecciona la opción que prefieras i envianos un correo a architour@coac.cat con tu elección.
+            </p>
+
+            <div class="options-grid-static">
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opción A
+                        </div>
+                        <div class="option-sub-static">
+                            Inglés — 19:00 (1pax) - juves y sábados - 47€ por persona
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opción B
+                        </div>
+                        <div class="option-sub-static">
+                            Catalán o Español — 19:00 (1pax) - viernes - 47€ por persona
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opción C
+                        </div>
+                        <div class="option-sub-static">
+                            Inglés — 19:00 (2 pax) - lunes, martes, miércoles, jueves, viernes y sábado - 85€ por 2 personas
+                        </div>
+                    </div>
+                </div>
+
+                <div class="option-card-static">
+                    <div class="opt-info-static">
+                        <div class="option-title-static">
+                            Opción D
+                        </div>
+                        <div class="option-sub-static">
+                            Inglés — 19:00 (3 pax) - lunes, martes, miércoles, jueves, viernes y sábado - 120€ por 3 personas
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Envía un email a architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Com</a></li>
+                <li><a href="../index.html#qui">Qui</a></li>
+                <li><a href="../index.html#rutes">Rutes</a></li>
+                <li><a href="../index.html#viatges">Viatges</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educació</a></li>
+                <li><a href="../index.html#contacte">Contacte</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">Ruta por el barrio Gótico</h1>
+                <p>
+                    Esta visita ofrece una inmersión en la Barcino romana -la Barcelona de época de Augusto- y en la ciudad medieval, que ha perdurado hasta nuestros días como centro de la vida política e institucional. La ruta discurre entre los focos que configuran la trama urbana medieval y conforman los barrios históricos del núcleo más antiguo de la ciudad.
+                </p>
+                <p>
+                    A lo largo del recorrido, edificios emblemáticos como la iglesia de Santa María del Pi, la iglesia de Santa Ana, la Catedral o el Palacio Real revelan sucesivas capas de significado arquitectónico e histórico. Plazas y calles tan representativas como la Plaza de Sant Felip Neri, la Plaza Real y la siempre animada Rambla, junto con barrios tan singulares como el Call judío, confluyen para crear un paisaje remarcable; en conjunto, un magma de arquitectura, historia y simbolismo.
+                </p>
+                <ul class="ruta-punts">
+                    <li>Se proporciona un dossier completo de la ruta con bibliografía y reseñas</li>
+                    <li>Para grupos reducidos con guías arquitectos</li>
+                    <li>Duración: 2:30h</li>
+                    <li>Idiomas posibles: catalán, castellano e inglés</li>
+                </ul>
+                <a href="#" class="coac-button">Reserva tu ruta</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadagotic.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Punto de encuentro</span>
+                <iframe
+                    src="https://www.google.com/maps?q=Pla%C3%A7a%20Nova,%20Barcelona&output=embed"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/canaletes.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contacto</h2>
+            <h4>
+                Correo electrónico:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. Todos los derechos reservados.
+        </p>
+        <p class="footer-p">
+            Diseño gráfico y web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-gotic.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

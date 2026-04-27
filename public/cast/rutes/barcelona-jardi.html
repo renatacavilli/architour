@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Barcelona Jardín - Architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Reserva tu ruta — Barcelona Jardín
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                Para reservar la ruta, envíanos un correo electrónico a architour@coac.cat, con tu disponibilidad. 
+            </p>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20Barcelona%20Jardín">
+                    Envíe correo a architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Cómo</a></li>
+                <li><a href="../index.html#qui">Quién</a></li>
+                <li><a href="../index.html#rutes">Rutas</a></li>
+                <li><a href="../index.html#viatges">Viajes</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educación</a></li>
+                <li><a href="../index.html#contacte">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">Ruta por la Barcelona Jardín</h1>
+                <p>
+                    El antiguo núcleo de origen rural, situado a los pies de la montaña, se caracteriza por una trama urbana no compacta. Viviendas unifamiliares aisladas, antiguas masías y mansiones recogidas, instituciones educativas y sanitarias de prestigio, así como una vida privada introvertida, revelan otra Barcelona -más solitaria, orientada al jardín y rica en matices.
+                </p>
+                <p>
+                    Con sus orígenes como lugar de veraneo, Sarrià se ha convertido en el enclave predilecto de la burguesía actual. El recorrido explora este tejido urbano y esta estructura social, así como el fértil laboratorio de una arquitectura residencial que prolonga las lecciones del racionalismo. Asimismo, una destacada obra de Gaudí, un notable monasterio medieval y un final en un singular centro comercial completan y dan sentido a esta experiencia.
+                </p>
+
+                <ul class="ruta-punts">
+                    <li>Se proporciona un dosier completo de la ruta con bibliografía y reseñas</li>
+                    <li>Para grupos reducidos con guías arquitectos</li>
+                    <li>Duración: 2:30h</li>
+                    <li>Idiomas posibles: catalán, castellano e inglés</li>
+                </ul>
+                <a href="#" class="coac-button">Reserva tu ruta</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadabcnjardi.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Punto de encuentro</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2992.7924877865557!2d2.1188659!3d41.4003127!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49840cd99c8c9%3A0x34ed490c349f6d83!2sMercat%20de%20Sarri%C3%A0!5e0!3m2!1ses!2ses!4v1772376757634!5m2!1ses!2ses"
+                    title="Mapa punto de encuentro - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/mercatsarria.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contacto</h2>
+            <h4>
+                Correo electrónico:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. Todos los derechos reservados.
+        </p>
+        <p class="footer-p">
+            Disseño gráfico y web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-barcelona-jardi.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+
+</body>
+</html>

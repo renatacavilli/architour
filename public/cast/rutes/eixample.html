@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Eixample - Architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Reserva tu ruta — Barcelona Jardín
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                Para reservar la ruta, envíanos un correo electrónico a architour@coac.cat, con tu disponibilidad. 
+            </p>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Envíe correo a architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Cómo</a></li>
+                <li><a href="../index.html#qui">Quién</a></li>
+                <li><a href="../index.html#rutes">Rutas</a></li>
+                <li><a href="../index.html#viatges">Viajes</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educación</a></li>
+                <li><a href="../index.html#contacte">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">Ruta por el Eixample</h1>
+                <p>
+                    Este itinerario explora la cultura del Modernismo catalán y de la ciudad proyectada por Cerdà, fermento de la metrópolis capitalista y expresión de una nueva sociedad burguesa total, profundamente modelada por los valores de la sociedad industrial del siglo XIX. La Casa Milà, la Casa Batlló o la Casa Amatller destacan como algunos de los máximos exponentes de la arquitectura modernista, integrados en un contexto urbano que exhibe con orgullo el estatus social dentro de la nueva ciudad.  
+                </p>
+                <p>
+                    El Paseo de Gracia, eje vertebrador del recorrido, actúa como gran espejo -un escenario elocuente de representación. El itinerario revela asimismo un rico conjunto de arquitecturas racionalistas y contemporáneas, incorporadas de manera armónica en la vibrante trama urbana diseñada por Cerdà.
+                </p>
+                <ul class="ruta-punts">
+                    <li>Se proporciona un dossier completo de la ruta con bibliografía y reseñas</li>
+                    <li>Para grupos reducidos con guías arquitectos</li>
+                    <li>Duración: 2:30h</li>
+                    <li>Idiomas posibles: catalán, castellano e inglés</li>
+                </ul>
+                <a href="#" class="coac-button">Reserva tu ruta</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadaeixample.png" alt="Mapa i carrer del Gòtic">
+        </section>
+        
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Punto de encuentro</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.3011532328587!2d2.1478882034223177!3d41.391360685984175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a29ccd0cc035%3A0xf0622260d7b3469a!2sCarrer%20de%20Londres%2C%2064%2C%20Eixample%2C%2008036%20Barcelona!5e0!3m2!1ses!2ses!4v1772369040137!5m2!1ses!2ses"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/eixampleportada.jpg" alt="Eixample imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contacto</h2>
+            <h4>
+                Correo electrónico:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. Todos los derechos reservados.
+        </p>
+        <p class="footer-p">
+            Diseño gráfico y web: Renata Cavilli
+        </p>
+    </footer>
+        
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-eixample.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

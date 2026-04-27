@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruta Born y Ribera - Architour</title>
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+
+<!-- ================= OVERLAY ESTÀTIC RESERVA ================= -->
+<div id="calendarOverlayStatic" aria-hidden="true">
+    <div class="calendar-overlay-box" role="dialog" aria-modal="true" aria-labelledby="calendarTitleStatic">
+
+        <button id="overlayCloseBtnStatic"
+                class="overlay-close"
+                aria-label="Tancar">
+            ✕
+        </button>
+
+        <h2 id="calendarTitleStatic">
+            Reserva tu ruta — Barcelona Jardín
+        </h2>
+
+        <div class="calendar-grid-wrapper">
+
+            <p class="calendar-intro-static">
+                Para reservar la ruta, envíanos un correo electrónico a architour@coac.cat, con tu disponibilidad. 
+            </p>
+
+            <div class="calendar-actions-static">
+                <a class="mail-button-static" href="mailto:architour@coac.cat?subject=Reserva%20Ruta%20G%C3%B2tic">
+                    Envíe correo a architour
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- ================= END OVERLAY ================= -->
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="/imatges/LOGO.jpeg" alt="Architour Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html#inici">Inici</a></li>
+                <li><a href="../index.html#com">Cómo</a></li>
+                <li><a href="../index.html#qui">Quién</a></li>
+                <li><a href="../index.html#rutes">Rutas</a></li>
+                <li><a href="../index.html#viatges">Viajes</a></li>
+                <li><a href="../index.html#study-abroad">Study Abroad</a></li>
+                <li><a href="../index.html#educacio">Educación</a></li>
+                <li><a href="../index.html#contacte">Contacto</a></li>
+            </ul>
+        </nav>
+        
+        <div class="language-switch" id="languageSwitch"></div>
+    </header>
+
+    <!-- CONTINGUT PRINCIPAL -->
+    <main>
+        <!-- INTRO + GALERIA -->
+        <section class="ruta-intro">
+            <div class="ruta-text">
+                <h1 class="ruta-titol">Ruta por el Born y la Ribera</h1>
+                <p>
+                    Este recorrido se centra en la ciudad medieval y especializada de los gremios, con la austeridad y el esplendor de la iglesia de Santa María del Mar en el corazón del barrio marinero de la Ribera, ejemplo esencial del gótico catalán. La Ciudadela, construida bajo la dominación de Felipe V de España -junto con los restos arqueológicos del Mercado del Born, recientemente restaurado como un magnífico centro cultural evocador de esta rica historia- constituye uno de los puntos más destacados del itinerario.
+                </p>
+                <p>
+                    Los poderosos palacios gótico-renacentistas de la calle Montcada y el modernismo etéreo y refinado del Palacio de la Música Catalana ofrecen una riqueza compleja que definen esta ciudad antigua. Algunos edificios contemporáneos de gran fuerza expresiva, como la radiante cubierta multicolor del Mercado de Santa Caterina, conviven de manera armónica con este mundo medieval.
+                </p>
+                <ul class="ruta-punts">
+                    <li>Se proporciona un dossier completo de la ruta con bibliografía y reseñas</li>
+                    <li>Para grupos reducidos con guías arquitectos</li>
+                    <li>Duración: 2:30h</li>
+                    <li>Idiomas posibles: catalán, castellano e inglés</li>
+                </ul>
+                <a href="#" class="coac-button">Reserva tu ruta</a>
+            </div>
+
+            <div class="inici-galeria">
+                <!-- La galeria s'omplirà amb galeria-gotic.js -->
+            </div>
+        </section>
+
+        <!-- FOTO GRAN -->
+        <section class="ruta-foto-gran">
+            <img src="/imatges/portadaborn2.png" alt="Mapa i carrer del Gòtic">
+        </section>
+
+        <!-- INFO DETALLADA -->
+        <section class="ruta-detall">
+            <div class="detall-mapa">
+                <span class="map-label">Punt de trobada</span>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d748.345939580153!2d2.175148369633817!3d41.38746969820623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a2fa42fbc979%3A0x9f87fcbe13d79a96!2sCarrer%20de%20Sant%20Pere%20M%C3%A9s%20Alt%2C%2012%2C%20Ciutat%20Vella%2C%2008003%20Barcelona!5e0!3m2!1ses!2ses!4v1772367989778!5m2!1ses!2ses"
+                    title="Mapa punt de trobada - Plaça Nova, Barcelona"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="detall-fotos">
+                <img src="/imatges/palau.png" alt="Gòtic imatge 1">
+            </div>
+        </section>
+    </main>
+
+    <!-- -------------------------FOOTER--------------------------- -->
+    <footer id="contacte">
+        <div class="footer-contacte">
+            <h2>Contacto</h2>
+            <h4>
+                Correo electrónico:
+                <a href="mailto:architour@coac.cat">architour@coac.cat</a>
+            </h4>
+            <div class="footer-xarxes">
+                <a href="https://www.facebook.com/architourbcn" target="_blank" class="btn-redes">Facebook</a>
+                <a href="https://www.instagram.com/architour/" target="_blank" class="btn-redes">Instagram</a>
+        </div>
+        <p class="footer-p">
+            © 2026 architour. Todos los derechos reservados.
+        </p>
+        <p class="footer-p">
+            Diseño gráfico y web: Renata Cavilli
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/java/menu-scroll.js" defer></script>
+    <script src="/java/galeria-born-ribera.js" defer></script>
+    <script src="/java/reserves-modal.js"></script>
+    <script src="/java/language-switch.js"></script>
+    <script src="/java/mobile-menu.js" defer></script>
+</body>
+</html>

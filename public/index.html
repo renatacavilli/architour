@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Detectar idioma i redirigir</title>
+    <meta name="robots" content="noindex">
+    <script>
+    (function() {
+      // ----- Opcions de debug (afegir ?debug=1 a la URL per veure logs) -----
+            const params = new URLSearchParams(location.search);
+            const DEBUG = params.get('debug') === '1';
+
+      // ----- Llegeix override per query o localStorage -----
+            const queryLang = (params.get('lang') || '').trim().toLowerCase();
+            const storedLang = (localStorage.getItem('preferredLang') || '').trim().toLowerCase();
+
+      // ----- Funció per triar carpeta de destí segons codi d'idioma -----
+        function pickFolder(code) {
+            if (!code) return 'en/';              // fallback
+            if (code.startsWith('cast')) return 'cast/';
+            if (code.startsWith('ca')) return 'cat/';
+            if (code.startsWith('en')) return 'en/';
+            // afegeix més regles si cal
+            return 'en/';
+        }
+
+      // ----- Decideix idioma: priority -> queryLang -> stored -> navigator -----
+        let chosen = '';
+        if (queryLang) {
+            chosen = pickFolder(queryLang);
+        // guarda preferència perquè la propera vegada vagi directa
+            try { localStorage.setItem('preferredLang', queryLang); } catch(e) {}
+        } else if (storedLang) {
+            chosen = pickFolder(storedLang);
+        } else {
+            const nav = (navigator.languages && navigator.languages[0]) || navigator.language || navigator.userLanguage || '';
+            chosen = pickFolder(nav.toLowerCase());
+        }
+
+      // ----- Calcula base path per suportar desplegaments en subcarpeta -----
+      // Exemples:
+      //  - "/"                            -> base = "/"
+      //  - "/subpath"                     -> base = "/subpath/"
+      //  - "/subpath/index.html"          -> base = "/subpath/"
+      //  - "/subpath/something/page.html" -> base = "/subpath/something/"
+        function computeBasePath() {
+            let p = location.pathname || '/';
+        // Si el path no acaba en '/', pren la part de directori
+            if (!p.endsWith('/')) {
+            const lastSlash = p.lastIndexOf('/');
+            if (lastSlash === -1) return '/';
+            p = p.slice(0, lastSlash + 1);
+            }
+            return p;
+        }
+
+        const basePath = computeBasePath();
+        const target = location.origin + basePath + chosen;
+
+        if (DEBUG) {
+            console.log('language detection debug:');
+            console.log('  queryLang =', queryLang);
+            console.log('  storedLang =', storedLang);
+            console.log('  navigator =', navigator.language || navigator.userLanguage, navigator.languages);
+            console.log('  chosen folder =', chosen);
+            console.log('  basePath =', basePath);
+            console.log('  redirect target =', target);
+        }
+
+      // Replace (no history entry) i redirigeix
+        try {
+            window.location.replace(target);
+        } catch (e) {
+        // Si falla, mostra enllaç fallback (només per seguretat)
+            if (DEBUG) console.error('redirect error', e);
+        }
+        })();
+    </script>
+    </head>
+    
+    <body>
+    <h1>Redirecció d'idioma</h1>
+    <p>Si no et redirigeix automàticament, fes clic a l'idioma que prefereixis:</p>
+    <ul>
+        <li><a href="cast/">Español</a></li>
+        <li><a href="cat/">Català</a></li>
+        <li><a href="en/">English</a></li>
+    </ul>
+
+    <p>Per provar manualment:
+        <code>?lang=cast</code>  o <code>?lang=cat</code>  o <code>?lang=en</code>.
+        També pots activar debug amb <code>?debug=1</code>.
+    </p>
+    </body>
+    
+</html>
