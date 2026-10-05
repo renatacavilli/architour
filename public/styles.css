@@ -1,4 +1,9 @@
 /*-------------------------------INFO GENERAL--------------------------*/
+:root {
+    --verd: #7bc142;        /* verd viu: botons i detalls */
+    --verd-fosc: #44831c;   /* fons amb text blanc (contrast 4,7:1) */
+}
+
 p {
     text-align: justify;
 }
@@ -13,7 +18,7 @@ body {
 
 /* ---------------- HEADER / NAV / FOOTER ---------------- */
 header {
-    background-color: #7bc142;
+    background-color: var(--verd-fosc);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -120,13 +125,13 @@ nav a {
 /*-------------------------------------------------------------*/
 /*-------------------------------FOOTER--------------------------*/
 footer {
-    background-color: #7bc142;
+    background-color: var(--verd-fosc);
     color: white;
     padding: 3rem 2rem 2rem; 
     text-align: center;
 }
 footer h2 { margin-bottom: 1rem; }
-footer a { color: #333; text-decoration: none; }
+footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
 .footer-xarxes {
     margin: 1rem 0;
@@ -144,7 +149,7 @@ footer a { color: #333; text-decoration: none; }
     text-decoration: none;
     transition: 0.3s;
 }
-.btn-redes:hover { background-color: #333; }
+.btn-redes:hover { background-color: #1f1f1f; }
 
 .footer-p {
     text-align: center;
@@ -478,29 +483,67 @@ footer a { color: #333; text-decoration: none; }
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    margin-top: 16px;
+    gap: 18px;
+    margin-top: 22px;
 }
 .rutes-btn {
-    background: linear-gradient(180deg, #7bc142 0%, #65a034 100%);
-    color: #fff;
-    border: 2px solid rgba(0,0,0,0.08);
-    padding: 12px 14px;
-    border-radius: 12px;
+    position: relative;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid var(--verd);
+    background: #fff;
+    color: var(--verd-fosc);
+    font-size: 0;               /* amaga el caràcter ◀ ▶ de l'HTML; la fletxa es dibuixa a ::before */
     cursor: pointer;
-    font-size: 20px;
-    width: 56px;
-    height: 56px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12), inset 0 -2px 0 rgba(0,0,0,0.03);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
-.rutes-btn:active { transform: translateY(1px) scale(0.98); }
+.rutes-btn::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-right: 2.5px solid currentColor;
+    border-bottom: 2.5px solid currentColor;
+    transform: translateX(-2px) rotate(-45deg);   /* fletxa cap a la dreta */
+}
+#rutesPrev::before { transform: translateX(2px) rotate(135deg); }
 .rutes-btn:hover {
+    background: var(--verd);
+    color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.14), inset 0 -2px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+}
+.rutes-btn:active { transform: translateY(0) scale(0.96); }
+.rutes-btn:focus-visible {
+    outline: 3px solid rgba(123,193,66,0.4);
+    outline-offset: 3px;
+}
+.rutes-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+    background: #fff;
+    color: var(--verd-fosc);
+}
+.rutes-progress-wrap {
+    width: min(220px, 40vw);
+    height: 4px;
+    border-radius: 2px;
+    background: #e3e7e6;
+    overflow: hidden;
+}
+.rutes-progress {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--verd);
+    transition: width 0.2s ease;
 }
 
 .ruta-detall {
@@ -620,7 +663,7 @@ footer a { color: #333; text-decoration: none; }
 #viatges { padding: 60px 0; }
 
 .viatges-container {
-    background: #7bc142;
+    background: var(--verd-fosc);
     color: #fff;
     border-radius: 20px;
     padding: 30px;
@@ -981,7 +1024,7 @@ footer a { color: #333; text-decoration: none; }
 nav.open {
     position: fixed;
     inset: 64px 0 0 0; /* under header */
-    background: rgba(123,193,66,0.98);
+    background: rgba(68,131,28,0.98);
     display: flex !important;
     flex-direction: column;
     align-items: center;

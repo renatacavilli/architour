@@ -40,6 +40,25 @@ document.addEventListener('DOMContentLoaded', function () {
         safeScrollTo(newLeft);
     });
 
+    const progress = document.getElementById('rutesProgress');
+
+    function updateControls() {
+        const max = maxScrollLeft();
+        const left = slider.scrollLeft;
+        if (progress && slider.scrollWidth > 0) {
+            // la barra mostra quina part del carrusel s'ha vist fins ara
+            const seen = (left + slider.clientWidth) / slider.scrollWidth;
+            progress.style.width = Math.min(100, Math.max(0, seen * 100)) + '%';
+        }
+        prevBtn.disabled = left <= 2;
+        nextBtn.disabled = left >= max - 2;
+    }
+
+    slider.addEventListener('scroll', updateControls, { passive: true });
+    window.addEventListener('resize', updateControls);
+    window.addEventListener('load', updateControls);
+    updateControls();
+
     let isDragging = false;
     let startX = 0;
 
