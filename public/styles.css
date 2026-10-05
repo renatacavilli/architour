@@ -1,4 +1,14 @@
 /*-------------------------------INFO GENERAL--------------------------*/
+:root {
+    --verd: #7bc142;            /* verd viu del logo: botons i detalls */
+    --tinta: #16240f;           /* text sobre el verd viu (contrast 8,6:1) */
+    --verd-fosc: #4a6741;       /* fons amb text blanc (contrast 6,4:1) */
+    --verd-mes-fosc: #3c5535;   /* estat hover dels botons foscos */
+    --marge: clamp(1.25rem, 4vw, 3rem);   /* marge lateral de la pàgina: 20 px en mòbil, fins a 48 px en pantalles grans */
+    --gris: #737d83;            /* gris plata: títols de secció i detalls */
+    --gris-degradat: linear-gradient(135deg, #8e989d 0%, #737d83 45%, #646e74 100%);   /* fons de la primera pantalla i de cada ruta */
+}
+
 p {
     text-align: justify;
 }
@@ -13,11 +23,11 @@ body {
 
 /* ---------------- HEADER / NAV / FOOTER ---------------- */
 header {
-    background-color: #7bc142;
+    background-color: var(--verd-fosc);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem var(--marge);
     gap: 1rem;
     position: fixed;
     top: 0;
@@ -92,7 +102,7 @@ nav a {
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus {
     background-color: #f0f0f0;        
-    color: #6d7a78;                   
+    color: var(--gris);                   
     outline: none;
     transform: translateY(-1px);      
 }
@@ -102,7 +112,7 @@ nav a {
 }
 
 .dropdown-menu li a:focus-visible {
-    outline: 3px solid rgba(123,193,66,0.22); 
+    outline: 3px solid rgba(123,193,66,0.45); 
     outline-offset: 3px;
     border-radius: 6px;
 }
@@ -120,13 +130,13 @@ nav a {
 /*-------------------------------------------------------------*/
 /*-------------------------------FOOTER--------------------------*/
 footer {
-    background-color: #7bc142;
+    background-color: var(--verd-fosc);
     color: white;
-    padding: 3rem 2rem 2rem; 
+    padding: 3rem var(--marge) 2rem;
     text-align: center;
 }
 footer h2 { margin-bottom: 1rem; }
-footer a { color: #333; text-decoration: none; }
+footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; }
 
 .footer-xarxes {
     margin: 1rem 0;
@@ -144,7 +154,7 @@ footer a { color: #333; text-decoration: none; }
     text-decoration: none;
     transition: 0.3s;
 }
-.btn-redes:hover { background-color: #333; }
+.btn-redes:hover { background-color: #1f1f1f; }
 
 .footer-p {
     text-align: center;
@@ -163,14 +173,14 @@ footer a { color: #333; text-decoration: none; }
     font-size: 2.2rem;
     margin-bottom: 2rem;
     font-weight: bold;
-    color: #6d7a78;
+    color: var(--gris);
 }
 .section-title::after {
     content: '';
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #6d7a78;
+    background-color: var(--verd);
     margin: 0.5rem auto 0;
 }
 
@@ -178,7 +188,6 @@ footer a { color: #333; text-decoration: none; }
 /*-------------------------------CANVI D'IDIOMA--------------------------*/
 .language-switch {
     position: relative;
-    margin-right: 2rem;
 }
 .lang-btn {
     background-color: transparent;
@@ -192,7 +201,7 @@ footer a { color: #333; text-decoration: none; }
 }
 .lang-btn:hover {
     background-color: white;
-    color: #6d7a78;
+    color: var(--gris);
 }
 .lang-menu {
     position: absolute;
@@ -227,9 +236,9 @@ footer a { color: #333; text-decoration: none; }
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6d7a78;
+    background: var(--gris-degradat);
     color: white;
-    padding: 6rem 2rem 2rem;
+    padding: 6rem var(--marge) 2rem;
 }
 
 .inici-content {
@@ -286,8 +295,9 @@ footer a { color: #333; text-decoration: none; }
 /*-------------------------------COM--------------------------*/
 #com {
     background-color: white;
-    padding: 3rem 0.5rem;
-    max-width: 1200px;
+    padding: 3rem var(--marge);
+    max-width: calc(1200px + 2 * var(--marge));
+    box-sizing: border-box;
     margin: 0 auto;
 }
 .com-text {
@@ -297,13 +307,8 @@ footer a { color: #333; text-decoration: none; }
     text-align: justify;
 }
 
-/* mòbil per COM */
-@media (max-width: 768px) {
-    #com { padding: 2rem 1.5rem; }
-}
-
 .hero {
-    background-color: #6d7a78;
+    background: var(--gris-degradat);
     color: white;
     text-align: center;
     padding: 4rem 1rem;
@@ -321,7 +326,7 @@ footer a { color: #333; text-decoration: none; }
 /*-------------------------------QUI--------------------------*/
 
 .qui {
-    padding: 40px 0;
+    padding: 40px var(--marge);
     box-sizing: border-box;
     background-color: white; 
 }
@@ -342,7 +347,6 @@ footer a { color: #333; text-decoration: none; }
     display: flex;
     gap: 32px;
     align-items: flex-start; 
-    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -389,30 +393,6 @@ footer a { color: #333; text-decoration: none; }
 }
 
 
-/* RESPONSIU: apilar en mòbil */
-@media (max-width: 768px) {
-    .qui-top {
-        flex-direction: column;
-        gap: 18px;
-        padding: 0 16px;
-    }
-    /* en mòbil tornem a un comportament normal perquè una imatge molt alta pot ser massa */
-    .qui-foto {
-        max-width: 100%;
-        flex: 0 0 auto;
-        aspect-ratio: auto;   /* <<-- important: desfem l'aspect-ratio fixe a mòbil */
-        height: auto;
-    }
-    .qui-foto .base img {
-        width: 100%;
-        height: auto;
-    }
-    .qui-text {
-        max-width: 100%;
-        align-self: auto; /* deixar que el flux determine l'alineació en mòbil */
-    }
-}
-
 /*-------------------------------------------------------------*/
 /*-------------------------------RUTES--------------------------*/
 #rutes {
@@ -421,6 +401,7 @@ footer a { color: #333; text-decoration: none; }
 #rutes .section-intro {
     max-width: 800px;
     margin: 0 auto 20px auto;
+    padding: 0 var(--marge);
     text-align: center;
     font-size: 1.5rem;
     line-height: 1.6;
@@ -429,6 +410,7 @@ footer a { color: #333; text-decoration: none; }
 #rutes .section-intro2 {
     max-width: 1200px;
     margin: 0 auto 20px auto;
+    padding: 0 var(--marge);
     text-align: center;
     font-size: 1rem;
     line-height: 1.6;
@@ -441,7 +423,8 @@ footer a { color: #333; text-decoration: none; }
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 20px 20px 20px 60px;
+    padding: 20px var(--marge);
+    scroll-padding-inline: var(--marge);
     scroll-behavior: smooth;
 }
 .rutes-slider::-webkit-scrollbar { display: none; }
@@ -464,13 +447,18 @@ footer a { color: #333; text-decoration: none; }
 .ruta-card:hover { transform: scale(1.05); }
 .ruta-title {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
+    box-sizing: border-box;
+    padding: 3.5rem 18px 20px;
     text-align: center;
-    font-size: 1.8em;
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.25;
     color: #fff;
     z-index: 1;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));   /* perquè es llegeixi sobre qualsevol foto */
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 }
 
 /* Controls */
@@ -478,38 +466,76 @@ footer a { color: #333; text-decoration: none; }
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    margin-top: 16px;
+    gap: 18px;
+    margin-top: 22px;
 }
 .rutes-btn {
-    background: linear-gradient(180deg, #7bc142 0%, #65a034 100%);
-    color: #fff;
-    border: 2px solid rgba(0,0,0,0.08);
-    padding: 12px 14px;
-    border-radius: 12px;
+    position: relative;
+    flex: none;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid var(--verd);
+    background: #fff;
+    color: var(--verd-fosc);
+    font-size: 0;               /* amaga el caràcter ◀ ▶ de l'HTML; la fletxa es dibuixa a ::before */
     cursor: pointer;
-    font-size: 20px;
-    width: 56px;
-    height: 56px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12), inset 0 -2px 0 rgba(0,0,0,0.03);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
 }
-.rutes-btn:active { transform: translateY(1px) scale(0.98); }
+.rutes-btn::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-right: 2.5px solid currentColor;
+    border-bottom: 2.5px solid currentColor;
+    transform: translateX(-2px) rotate(-45deg);   /* fletxa cap a la dreta */
+}
+#rutesPrev::before { transform: translateX(2px) rotate(135deg); }
 .rutes-btn:hover {
+    background: var(--verd);
+    color: var(--tinta);
     transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.14), inset 0 -2px 0 rgba(0,0,0,0.04);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.14);
+}
+.rutes-btn:active { transform: translateY(0) scale(0.96); }
+.rutes-btn:focus-visible {
+    outline: 3px solid rgba(123,193,66,0.55);
+    outline-offset: 3px;
+}
+.rutes-btn:disabled {
+    opacity: 0.35;
+    cursor: default;
+    transform: none;
+    box-shadow: none;
+    background: #fff;
+    color: var(--verd-fosc);
+}
+.rutes-progress-wrap {
+    width: min(220px, 40vw);
+    height: 4px;
+    border-radius: 2px;
+    background: #e3e7e6;
+    overflow: hidden;
+}
+.rutes-progress {
+    height: 100%;
+    border-radius: 2px;
+    background: var(--verd);
+    transition: width 0.2s ease;
 }
 
 .ruta-detall {
     display: flex;
     gap: 20px;
     align-items: stretch;
-    max-width: 1200px;
+    max-width: calc(1200px + 2 * var(--marge));
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 var(--marge);
     box-sizing: border-box;
 }
 .detall-mapa,
@@ -580,21 +606,14 @@ footer a { color: #333; text-decoration: none; }
     height: auto;          
     overflow: visible;     
 }
-@media (max-width: 768px) {
-    .ruta-detall { flex-direction: column; gap: 16px; margin: 20px auto; }
-    .detall-mapa { width: 100%; height: 320px; min-width: 0; }
-    .detall-fotos { width: 100%; justify-content: center; }
-    .detall-fotos img { max-width: 100%; height: auto; }
-    .detall-mapa iframe { height: 200px; }
-}
 
 .ruta-intro {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 8rem 2rem 4rem;
-    background-color: #6d7a78;
+    padding: 8rem var(--marge) 4rem;
+    background: var(--gris-degradat);
     color: white;
     min-height: 80vh;
 }
@@ -609,18 +628,13 @@ footer a { color: #333; text-decoration: none; }
 .ruta-punts li { margin-bottom: 0.6rem; font-size: 1rem; }
 .ruta-punts li > strong { display: block; margin-bottom: 0.5rem; font-weight: 700; }
 
-@media (max-width: 768px) {
-    .ruta-intro { flex-direction: column; text-align: center; }
-    .ruta-intro .ruta-text, .inici-galeria { max-width: 100%; }
-    .ruta-intro .ruta-titol { margin-top: 0.5rem; }
-}
 
 /*-------------------------------------------------------------*/
 /*-------------------------------VIATGES--------------------------*/
-#viatges { padding: 60px 0; }
+#viatges { padding: 60px var(--marge); }
 
 .viatges-container {
-    background: #7bc142;
+    background: var(--verd-fosc);
     color: #fff;
     border-radius: 20px;
     padding: 30px;
@@ -665,34 +679,36 @@ footer a { color: #333; text-decoration: none; }
 .viatges-grid .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, rgba(0,0,0,0) 45%, rgba(0,0,0,0.35) 100%);
     border-radius: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: background 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.4em;
+    justify-content: flex-end;
+    padding: 0 7%;
+    color: #fff;
+    font-size: 1.7em;
     font-weight: bold;
+    letter-spacing: 0.14em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
-.viatges-grid .card:hover .overlay { opacity: 1; }
-@media (max-width: 768px) {
-    .viatges-grid .card { height: 250px; }
-}
+.viatges-grid .overlay p { margin: 0; }
+
 
 /* ---------- BOTÓ COAC (ruta-intro) ---------- */
 
 .coac-button {
     display: inline-block;
-    background-color: #7bc142;   
-    color: #ffffff;
+    background-color: var(--verd);
+    color: var(--tinta);
     text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
     font-weight: 700;
     font-size: 0.95rem;
-    line-height: 1;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    line-height: 1.2;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.14);
     border: none;
     transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
     -webkit-font-smoothing: antialiased;
@@ -702,9 +718,9 @@ footer a { color: #333; text-decoration: none; }
 
 .coac-button:hover,
 .coac-button:focus {
-    background-color: #65a034; 
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+    background-color: #8fd457;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.18);
 }
 
 .coac-button:active {
@@ -713,7 +729,7 @@ footer a { color: #333; text-decoration: none; }
 }
 
 .coac-button:focus-visible {
-    outline: 3px solid rgba(123,193,66,0.22);
+    outline: 3px solid rgba(123,193,66,0.45);
     outline-offset: 3px;
 }
 
@@ -727,17 +743,12 @@ footer a { color: #333; text-decoration: none; }
     }
 }
 
-@media (max-width: 480px) {
-    .coac-button:hover,
-    .coac-button:focus {
-        transform: translateY(-1px) scale(1.02);
-    }
-}
+
 
 
 /*-------------------------------------------------------------*/
 /*-------------------------------STUDY ABROAD--------------------------*/
-#study-abroad { padding: 60px 0; }
+#study-abroad { padding: 60px var(--marge); }
 .study-container {
     display: flex;
     align-items: center;
@@ -753,7 +764,7 @@ footer a { color: #333; text-decoration: none; }
 .study-info { flex: 1; }
 .study-info p { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
 .study-btn {
-    background-color: #7bc142;
+    background-color: var(--verd-fosc);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -770,15 +781,10 @@ footer a { color: #333; text-decoration: none; }
     border-radius: 16px;
     display: block;
 }
-@media (max-width: 768px) {
-    .calendari-container,
-    .study-container { flex-direction: column; padding: 0 1rem; }
-    .study-image img { width: 100%; height: auto; max-width: 350px; }
-}
 
 /*-------------------------------------------------------------*/
 /*-------------------------------EDUCACIÓ--------------------------*/
-#educacio { padding: 60px 0; }
+#educacio { padding: 60px var(--marge); }
 #educacio .intro-text {
     max-width: 800px;
     margin: 0 auto 40px auto;
@@ -793,7 +799,6 @@ footer a { color: #333; text-decoration: none; }
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 .card {
     position: relative;
@@ -808,13 +813,23 @@ footer a { color: #333; text-decoration: none; }
 .card:hover { transform: scale(1.03); }
 .card-title {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
+    box-sizing: border-box;
+    padding: 3rem 16px 18px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.25;
     color: #fff;
     z-index: 1;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease;
+}
+/* amb ratolí: en passar-hi surt la descripció i el títol s'aparta perquè no es trepitgin */
+@media (hover: hover) and (min-width: 769px) {
+    .educacio-grid .card:hover .card-title { opacity: 0; }
 }
 .overlay {
     position: absolute;
@@ -851,7 +866,7 @@ footer a { color: #333; text-decoration: none; }
 .calendari-foto { flex: 0 0 40%; max-width: 420px; }
 .calendari-foto img { width: 100%; height: auto; border-radius: 12px; display: block; }
 .calendari-text { flex: 1 1 55%; }
-.calendari-text h3 { font-size: 1.6rem; color: #6d7a78; margin-bottom: 0.5rem; }
+.calendari-text h3 { font-size: 1.6rem; color: var(--gris); margin-bottom: 0.5rem; }
 .calendari-text p { font-size: 1rem; line-height: 1.6; color: #333; }
 
 /* =========================================================OVERLAY ESTÀTIC RESERVA RUTES ========================================================= */
@@ -937,21 +952,33 @@ footer a { color: #333; text-decoration: none; }
 }
 
 .mail-button-static {
-    display: inline-block;
-    padding: 10px 18px;
-
-    background: linear-gradient(180deg, #7bc142, #65a034);
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    background: var(--verd);
+    color: var(--tinta);
     text-decoration: none;
     font-weight: 700;
-
-    border-radius: 8px;
+    line-height: 1.25;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(74,103,65,0.25);
+    transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
-
-.mail-button-static:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
+.mail-button-static::after {
+    content: '\2192';   /* fletxa → */
+    font-size: 1.1em;
+    line-height: 1;
+    transition: transform 180ms ease;
 }
+.mail-button-static:hover,
+.mail-button-static:focus-visible {
+    background: #8fd457;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(74,103,65,0.3);
+}
+.mail-button-static:hover::after,
+.mail-button-static:focus-visible::after { transform: translateX(4px); }
 
 /* Responsive */
 @media (max-width: 600px) {
@@ -961,8 +988,9 @@ footer a { color: #333; text-decoration: none; }
 }
 
 
-
-/* =================== RESPOSIVE / MOBILE ADDITIONS =================== */
+/* =====================================================================
+   MENÚ DE MÒBIL (peces que només s'activen amb el botó ☰)
+   ===================================================================== */
 
 .hamburger {
     display: none;
@@ -977,11 +1005,12 @@ footer a { color: #333; text-decoration: none; }
     justify-content: center;
     border-radius: 8px;
 }
+.hamburger.is-open { transform: rotate(90deg); transition: transform 160ms ease; }
 
 nav.open {
     position: fixed;
-    inset: 64px 0 0 0; /* under header */
-    background: rgba(123,193,66,0.98);
+    inset: 64px 0 0 0; /* sota la capçalera */
+    background: rgba(74,103,65,0.98);
     display: flex !important;
     flex-direction: column;
     align-items: center;
@@ -1016,79 +1045,67 @@ body.nav-open::before {
     z-index: 1500;
 }
 
-.rutes-slider {
-    padding-left: 20px; 
-}
 
+
+/* =====================================================================
+   DETALLS EN EL VERD DEL LOGO
+   ===================================================================== */
+
+/* menú d'escriptori: línia verda sota l'enllaç en passar-hi */
+@media (min-width: 769px) {
+    nav > ul > li > a { transition: box-shadow 0.18s ease; }
+    nav > ul > li > a:hover,
+    nav > ul > li > a:focus-visible { box-shadow: inset 0 -2px 0 var(--verd); }
+}
+.lang-btn:hover { background-color: var(--verd); border-color: var(--verd); color: var(--tinta); }
+
+/* punts de les llistes de cada ruta */
+.ruta-punts li::marker { color: var(--verd); }
+
+/* opcions de la finestra de reserva */
+.option-card-static { border-left: 4px solid var(--verd); }
+
+/* peu: subratllat del correu i botons de xarxes */
+footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
+.btn-redes:hover { background-color: var(--verd); color: var(--tinta); }
+
+
+/* =====================================================================
+   ADAPTACIÓ A PANTALLES PETITES
+   Totes les regles són aquí, de la pantalla més gran a la més petita:
+     1. fins a 1024 px  (tauleta apaïsada, portàtil petit)
+     2. fins a 768 px   (tauleta vertical i mòbil)
+     3. fins a 480 px   (mòbil petit)
+     4. pantalles tàctils o estretes (el que depenia del ratolí)
+   ===================================================================== */
+
+/* ---------- 1. Fins a 1024 px ---------- */
 @media (max-width: 1024px) {
     .inici-text h1 { font-size: 2.4rem; }
     .inici-text p { font-size: 1rem; }
     .inici-galeria { margin-left: 20px; max-width: 420px; }
 }
 
+/* ---------- 2. Fins a 768 px ---------- */
 @media (max-width: 768px) {
 
+    /* --- Text: sense justificar, que en columnes estretes deixa forats --- */
+    p,
+    .com-text,
+    #qui-info { text-align: left; }
+    .footer-p { text-align: center; }
+
+    /* --- Capçalera i menú --- */
     header {
-        padding: 0.6rem 1rem;
+        padding: 0.6rem var(--marge);
         gap: 0.5rem;
     }
     header img { height: 42px; }
 
     .hamburger { display: inline-flex; }
-    nav ul { display: none; } 
-    .language-switch { display: none; } 
+    nav ul { display: none; }
+    .language-switch { display: none; }
 
-    .inici-content {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-    }
-    .inici-text { max-width: 100%; }
-    .inici-text h1 { font-size: 2.2rem; }
-    .inici-galeria {
-        margin-left: 0;
-        width: 100%;
-        max-width: 100%;
-        aspect-ratio: auto;
-        height: 220px;
-    }
-    .inici-galeria .slide { object-fit: cover; }
-
-    .ruta-card {
-        height: 55vh;
-        min-width: 70vw;
-        aspect-ratio: auto;
-        border-radius: 16px;
-    }
-
-    .rutes-slider { gap: 14px; padding: 20px 12px; }
-
-    .ruta-intro { padding: 3rem 1rem 2rem; gap: 1rem; min-height: auto; }
-    .ruta-intro .ruta-text { max-width: 100%; }
-
-    .ruta-detall { flex-direction: column; gap: 16px; padding: 0 1rem; margin: 20px auto; }
-    .detall-mapa { height: 220px; }
-    .detall-mapa iframe { height: 100%; }
-
-    .study-container { flex-direction: column; padding: 1rem; }
-    .study-image img { width: 100%; height: auto; max-width: 460px; }
-
-    .educacio-grid { grid-template-columns: 1fr; padding: 0 1rem; }
-
-    .calendar-overlay-box { width: calc(100% - 24px); padding: 18px; }
-
-    .qui-foto .base { width: 100%; height: auto; display: block; }
-}
-
-@media (max-width: 480px) {
-    .ruta-card { height: 48vh; min-width: 80vw; }
-    .inici-text h1 { font-size: 1.8rem; }
-    .inici-text p { font-size: 0.98rem; }
-    .section-title { font-size: 1.6rem; }
-    .coac-button { padding: 8px 12px; font-size: 0.92rem; }
-}
-
-@media (max-width: 768px) {
     .dropdown-menu {
         position: static;
         box-shadow: none;
@@ -1104,35 +1121,19 @@ body.nav-open::before {
     }
     .dropdown-menu li a:hover,
     .dropdown-menu li a:focus { background: rgba(255,255,255,0.08); color: white; transform: none; }
-    .nav-rutes:hover .dropdown-menu { display: none; } 
-}
+    .nav-rutes:hover .dropdown-menu { display: none; }
 
-@media (max-width: 768px) {
-    .detall-fotos img, .detall-fotos2 img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-}
-
-@media (max-width: 768px) {
+    nav.open { overflow-y: auto; }
     nav.open a { font-size: 1.05rem; padding: 14px; }
-}
+    nav.open .dropdown-menu li a {
+        padding: 7px 14px;
+        font-size: 0.92rem;
+        opacity: 0.9;
+    }
+    /* el fons enfosquit ha de quedar per sota de la capçalera (z-index 1000), no per sobre del menú */
+    body.nav-open::before { z-index: 900; }
 
-.hamburger.is-open { transform: rotate(90deg); transition: transform 160ms ease; }
-
-
-/* =================== MÒBIL: AJUSTOS (2026-10) =================== */
-
-@media (max-width: 768px) {
-
-    /* --- Text: sense justificar, que en columnes estretes deixa forats --- */
-    p,
-    .com-text,
-    #qui-info { text-align: left; }
-    .footer-p { text-align: center; }
-
-    /* --- Selector d'idioma dins del menú hamburguesa --- */
+    /* selector d'idioma dins del menú */
     nav.open .language-switch {
         display: block;
         order: -1;
@@ -1161,72 +1162,96 @@ body.nav-open::before {
         font-weight: 600;
     }
     nav.open .lang-menu li.active a {
-        background: white;
-        color: #6d7a78;
+        background: var(--verd);
+        border-color: var(--verd);
+        color: var(--tinta);
     }
-    nav.open { overflow-y: auto; }
-    nav.open .dropdown-menu li a {
-        padding: 7px 14px;
-        font-size: 0.92rem;
-        opacity: 0.9;
-    }
-    /* el fons enfosquit ha de quedar per sota de la capçalera (z-index 1000), no per sobre del menú */
-    body.nav-open::before { z-index: 900; }
 
     /* --- Inici: foto a dalt, la secció creix amb el contingut --- */
     #inici {
         height: auto;
-        padding: 5.5rem 0 2.5rem;
+        padding: 5.5rem var(--marge) 2.5rem;
     }
     .inici-content {
         flex-direction: column-reverse;
         gap: 1.5rem;
-        padding: 0 1.25rem;
-        box-sizing: border-box;
     }
-    .inici-text { flex: none; }
-    .inici-text h1 { margin: 0 0 1rem; }
+    .inici-text { flex: none; max-width: 100%; }
+    .inici-text h1 { font-size: 2.2rem; margin: 0 0 1rem; }
     .inici-galeria {
         flex: none;
+        margin-left: 0;
+        width: 100%;
+        max-width: 100%;
         height: auto;
         aspect-ratio: 1 / 1;
     }
 
-    /* --- Marges laterals --- */
-    #rutes .section-intro,
-    #rutes .section-intro2,
-    #educacio .intro-text {
-        padding: 0 1.25rem;
+    /* --- Com --- */
+    #com { padding: 2rem var(--marge); }
+
+    /* --- Qui: foto i text apilats --- */
+    .qui-top {
+        flex-direction: column;
+        gap: 18px;
     }
+    .qui-foto {
+        max-width: 100%;
+        flex: 0 0 auto;
+        aspect-ratio: auto;
+        height: auto;
+    }
+    .qui-foto .base { width: 100%; height: auto; display: block; }
+    .qui-text {
+        max-width: 100%;
+        align-self: auto;
+    }
+
+    /* --- Rutes: carrusel --- */
     #rutes .section-intro { font-size: 1.2rem; }
-    .viatges-container {
-        margin: 0 1rem;
-        padding: 24px 18px;
+    .rutes-slider { gap: 14px; }
+    .ruta-card {
+        height: 55vh;
+        min-width: 70vw;
+        aspect-ratio: auto;
+        border-radius: 16px;
     }
+    .ruta-title { padding: 3rem 14px 16px; font-size: 1.15rem; }
+
+    /* --- Viatges --- */
+    .viatges-container { padding: 24px 18px; }
+    .viatges-grid .card { height: 250px; }
+    .viatges-grid .overlay {
+        background: rgba(0,0,0,0.4);
+        justify-content: center;
+        padding: 0 12px;
+        font-size: 1.35em;
+        text-align: center;
+    }
+
+    /* --- Study Abroad --- */
+    .calendari-container { flex-direction: column; padding: 0 1rem; }
     .study-container {
-        margin: 0 1rem;
+        flex-direction: column;
         padding: 20px 18px;
         gap: 20px;
     }
-    .mail-button-static { text-align: center; }
+    .study-image img { width: 100%; height: auto; max-width: 460px; }
+    .mail-button-static { justify-content: center; text-align: left; }
 
-    /* --- Títols de les targetes de ruta: més petits i amb fons per llegir-los --- */
-    .ruta-title {
-        bottom: 0;
-        box-sizing: border-box;
-        padding: 3rem 14px 16px;
-        font-size: 1.25rem;
-        line-height: 1.25;
-        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
-    }
+    /* --- Educació --- */
+    .educacio-grid { grid-template-columns: 1fr; }
 
-    /* --- Pàgines de ruta: títol per sota de la capçalera fixa --- */
+    /* --- Pàgines de ruta: capçalera --- */
     .ruta-intro {
-        padding: 6rem 1.25rem 2.5rem;
-        text-align: left;
+        flex-direction: column;
         align-items: stretch;
+        gap: 1rem;
+        padding: 6rem var(--marge) 2.5rem;   /* el títol queda per sota de la capçalera fixa */
+        min-height: auto;
+        text-align: left;
     }
-    .ruta-intro .ruta-text { flex: none; }
+    .ruta-intro .ruta-text { flex: none; max-width: 100%; }
     .ruta-intro .ruta-titol {
         font-size: 2.1rem;
         line-height: 1.15;
@@ -1238,30 +1263,51 @@ body.nav-open::before {
         text-align: left;
     }
 
-    /* --- Pàgines de ruta: mapa del punt de trobada i foto (abans quedaven amb alçada zero) --- */
+    /* --- Pàgines de ruta: mapa del punt de trobada i foto --- */
+    .ruta-detall { flex-direction: column; gap: 16px; margin: 20px auto; }
     .detall-mapa,
     .detall-fotos,
     .detall-fotos2 {
-        flex: none;
+        flex: none;          /* sense això quedaven amb alçada zero */
         min-width: 0;
         max-width: 100%;
         width: 100%;
     }
     .detall-mapa { height: 260px; }
+    .detall-mapa iframe { height: 100%; }
+    .detall-fotos { justify-content: center; }
     .detall-fotos,
     .detall-fotos2 { height: auto; }
+    .detall-fotos img,
+    .detall-fotos2 img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
 
     /* --- Finestra de reserva --- */
     #calendarOverlayStatic { background: rgba(0,0,0,0.45); }
     .calendar-overlay-box {
+        width: calc(100% - 24px);
         max-height: 85vh;
+        padding: 18px;
         overflow-y: auto;
         box-sizing: border-box;
     }
     .calendar-actions-static { justify-content: center; }
 }
 
-/* --- Pantalles tàctils o estretes: el text que només sortia amb el ratolí, sempre visible --- */
+/* ---------- 3. Fins a 480 px ---------- */
+@media (max-width: 480px) {
+    .ruta-card { height: 48vh; min-width: 80vw; }
+    .inici-text h1 { font-size: 1.8rem; }
+    .inici-text p { font-size: 0.98rem; }
+    .section-title { font-size: 1.6rem; }
+    .coac-button { padding: 8px 12px; font-size: 0.92rem; }
+}
+
+/* ---------- 4. Pantalles tàctils o estretes: el text que només sortia amb el ratolí, sempre visible ---------- */
 @media (max-width: 768px), (hover: none) {
 
     /* Projectes educatius: foto a dalt, títol i text a sota */
@@ -1285,6 +1331,7 @@ body.nav-open::before {
         position: static;
         box-sizing: border-box;
         padding: 16px 18px 0;
+        background: none;
         font-size: 1.15rem;
         font-weight: 700;
         text-align: left;
@@ -1305,10 +1352,6 @@ body.nav-open::before {
     }
     .educacio-grid .overlay p { margin: 0; text-align: left; }
 
-    /* Viatges: el nom de la destinació, sempre visible */
-    .viatges-grid .card .overlay {
-        opacity: 1;
-        background: rgba(0,0,0,0.35);
-    }
+    /* Viatges: la targeta no es mou en tocar-la */
     .viatges-grid .card:hover { transform: none; }
 }
