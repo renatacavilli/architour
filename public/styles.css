@@ -5,7 +5,7 @@
     --verd-fosc: #4a6741;       /* fons amb text blanc (contrast 6,4:1) */
     --verd-mes-fosc: #3c5535;   /* estat hover dels botons foscos */
     --gris: #737d83;            /* gris plata: títols de secció i detalls */
-    --gris-degradat: linear-gradient(135deg, #a6afb4 0%, #8b959b 45%, #767f85 100%);   /* fons de la primera pantalla i de cada ruta */
+    --gris-degradat: linear-gradient(135deg, #8e989d 0%, #737d83 45%, #646e74 100%);   /* fons de la primera pantalla i de cada ruta */
 }
 
 p {
