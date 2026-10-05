@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.querySelector(".hamburger")) {
         const btn = document.createElement("button");
         btn.className = "hamburger";
-        btn.setAttribute("aria-label", "Obrir menú");
+        const path = window.location.pathname;
+        const menuLabel = path.startsWith("/en/") ? "Open menu"
+            : path.startsWith("/cast/") ? "Abrir menú"
+            : "Obrir menú";
+        btn.setAttribute("aria-label", menuLabel);
         btn.setAttribute("aria-expanded", "false");
         btn.innerHTML = "☰";
         header.insertBefore(
