@@ -3,6 +3,8 @@
     --verd: #6f9a5b;            /* verd d'accent: vores, barra de progrés, detalls */
     --verd-fosc: #4a6741;       /* fons amb text blanc (contrast 6,4:1) */
     --verd-mes-fosc: #3c5535;   /* estat hover dels botons foscos */
+    --gris: #737d83;            /* gris plata: títols de secció i detalls */
+    --gris-degradat: linear-gradient(135deg, #8e989d 0%, #737d83 45%, #646e74 100%);   /* fons de la primera pantalla i de cada ruta */
 }
 
 p {
@@ -98,7 +100,7 @@ nav a {
 .dropdown-menu li a:hover,
 .dropdown-menu li a:focus {
     background-color: #f0f0f0;        
-    color: #6d7a78;                   
+    color: var(--gris);                   
     outline: none;
     transform: translateY(-1px);      
 }
@@ -169,14 +171,14 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     font-size: 2.2rem;
     margin-bottom: 2rem;
     font-weight: bold;
-    color: #6d7a78;
+    color: var(--gris);
 }
 .section-title::after {
     content: '';
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #6d7a78;
+    background-color: var(--gris);
     margin: 0.5rem auto 0;
 }
 
@@ -198,7 +200,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 }
 .lang-btn:hover {
     background-color: white;
-    color: #6d7a78;
+    color: var(--gris);
 }
 .lang-menu {
     position: absolute;
@@ -233,7 +235,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6d7a78;
+    background: var(--gris-degradat);
     color: white;
     padding: 6rem 2rem 2rem;
 }
@@ -309,7 +311,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 }
 
 .hero {
-    background-color: #6d7a78;
+    background: var(--gris-degradat);
     color: white;
     text-align: center;
     padding: 4rem 1rem;
@@ -638,7 +640,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     justify-content: center;
     gap: 2rem;
     padding: 8rem 2rem 4rem;
-    background-color: #6d7a78;
+    background: var(--gris-degradat);
     color: white;
     min-height: 80vh;
 }
@@ -902,7 +904,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 .calendari-foto { flex: 0 0 40%; max-width: 420px; }
 .calendari-foto img { width: 100%; height: auto; border-radius: 12px; display: block; }
 .calendari-text { flex: 1 1 55%; }
-.calendari-text h3 { font-size: 1.6rem; color: #6d7a78; margin-bottom: 0.5rem; }
+.calendari-text h3 { font-size: 1.6rem; color: var(--gris); margin-bottom: 0.5rem; }
 .calendari-text p { font-size: 1rem; line-height: 1.6; color: #333; }
 
 /* =========================================================OVERLAY ESTÀTIC RESERVA RUTES ========================================================= */
@@ -1225,7 +1227,7 @@ body.nav-open::before {
     }
     nav.open .lang-menu li.active a {
         background: white;
-        color: #6d7a78;
+        color: var(--gris);
     }
     nav.open { overflow-y: auto; }
     nav.open .dropdown-menu li a {
