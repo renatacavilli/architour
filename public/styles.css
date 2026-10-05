@@ -1,7 +1,8 @@
 /*-------------------------------INFO GENERAL--------------------------*/
 :root {
-    --verd: #7bc142;        /* verd viu: botons i detalls */
-    --verd-fosc: #44831c;   /* fons amb text blanc (contrast 4,7:1) */
+    --verd: #6f9a5b;            /* verd d'accent: vores, barra de progrés, detalls */
+    --verd-fosc: #4a6741;       /* fons amb text blanc (contrast 6,4:1) */
+    --verd-mes-fosc: #3c5535;   /* estat hover dels botons foscos */
 }
 
 p {
@@ -107,7 +108,7 @@ nav a {
 }
 
 .dropdown-menu li a:focus-visible {
-    outline: 3px solid rgba(123,193,66,0.22); 
+    outline: 3px solid rgba(111,154,91,0.35); 
     outline-offset: 3px;
     border-radius: 6px;
 }
@@ -521,7 +522,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 }
 .rutes-btn:active { transform: translateY(0) scale(0.96); }
 .rutes-btn:focus-visible {
-    outline: 3px solid rgba(123,193,66,0.4);
+    outline: 3px solid rgba(111,154,91,0.45);
     outline-offset: 3px;
 }
 .rutes-btn:disabled {
@@ -708,34 +709,46 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 .viatges-grid .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to right, rgba(0,0,0,0) 45%, rgba(0,0,0,0.35) 100%);
     border-radius: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    opacity: 1;
+    transition: background 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.4em;
+    justify-content: flex-end;
+    padding: 0 7%;
+    color: #fff;
+    font-size: 1.7em;
     font-weight: bold;
+    letter-spacing: 0.14em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.6);
 }
-.viatges-grid .card:hover .overlay { opacity: 1; }
+.viatges-grid .overlay p { margin: 0; }
+
 @media (max-width: 768px) {
     .viatges-grid .card { height: 250px; }
+    .viatges-grid .overlay {
+        background: rgba(0,0,0,0.4);
+        justify-content: center;
+        padding: 0 12px;
+        font-size: 1.35em;
+        text-align: center;
+    }
 }
 
 /* ---------- BOTÓ COAC (ruta-intro) ---------- */
 
 .coac-button {
     display: inline-block;
-    background-color: #7bc142;   
-    color: #ffffff;
+    background-color: #ffffff;
+    color: var(--verd-fosc);
     text-decoration: none;
-    padding: 10px 16px;
-    border-radius: 10px;
+    padding: 12px 22px;
+    border-radius: 999px;
     font-weight: 700;
     font-size: 0.95rem;
-    line-height: 1;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    line-height: 1.2;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.14);
     border: none;
     transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
     -webkit-font-smoothing: antialiased;
@@ -745,9 +758,9 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 
 .coac-button:hover,
 .coac-button:focus {
-    background-color: #65a034; 
-    transform: translateY(-2px) scale(1.04);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+    background-color: #eef3ec;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 26px rgba(0,0,0,0.18);
 }
 
 .coac-button:active {
@@ -756,7 +769,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 }
 
 .coac-button:focus-visible {
-    outline: 3px solid rgba(123,193,66,0.22);
+    outline: 3px solid rgba(111,154,91,0.35);
     outline-offset: 3px;
 }
 
@@ -770,12 +783,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     }
 }
 
-@media (max-width: 480px) {
-    .coac-button:hover,
-    .coac-button:focus {
-        transform: translateY(-1px) scale(1.02);
-    }
-}
+
 
 
 /*-------------------------------------------------------------*/
@@ -796,7 +804,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 .study-info { flex: 1; }
 .study-info p { font-size: 1rem; line-height: 1.6; margin-bottom: 20px; }
 .study-btn {
-    background-color: #7bc142;
+    background-color: var(--verd-fosc);
     color: white;
     padding: 12px 20px;
     border: none;
@@ -980,21 +988,33 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 }
 
 .mail-button-static {
-    display: inline-block;
-    padding: 10px 18px;
-
-    background: linear-gradient(180deg, #7bc142, #65a034);
-    color: white;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 24px;
+    background: var(--verd-fosc);
+    color: #fff;
     text-decoration: none;
-    font-weight: 700;
-
-    border-radius: 8px;
+    font-weight: 600;
+    line-height: 1.25;
+    border-radius: 999px;
+    box-shadow: 0 6px 16px rgba(74,103,65,0.28);
+    transition: background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
-
-.mail-button-static:hover {
-    opacity: 0.95;
-    transform: translateY(-1px);
+.mail-button-static::after {
+    content: '\2192';   /* fletxa → */
+    font-size: 1.1em;
+    line-height: 1;
+    transition: transform 180ms ease;
 }
+.mail-button-static:hover,
+.mail-button-static:focus-visible {
+    background: var(--verd-mes-fosc);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 22px rgba(74,103,65,0.32);
+}
+.mail-button-static:hover::after,
+.mail-button-static:focus-visible::after { transform: translateX(4px); }
 
 /* Responsive */
 @media (max-width: 600px) {
@@ -1024,7 +1044,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 nav.open {
     position: fixed;
     inset: 64px 0 0 0; /* under header */
-    background: rgba(68,131,28,0.98);
+    background: rgba(74,103,65,0.98);
     display: flex !important;
     flex-direction: column;
     align-items: center;
@@ -1251,7 +1271,7 @@ body.nav-open::before {
         padding: 20px 18px;
         gap: 20px;
     }
-    .mail-button-static { text-align: center; }
+    .mail-button-static { justify-content: center; text-align: left; }
 
     /* --- Títols de les targetes de ruta: més petits i amb fons per llegir-los --- */
     .ruta-title {
@@ -1349,9 +1369,5 @@ body.nav-open::before {
     .educacio-grid .overlay p { margin: 0; text-align: left; }
 
     /* Viatges: el nom de la destinació, sempre visible */
-    .viatges-grid .card .overlay {
-        opacity: 1;
-        background: rgba(0,0,0,0.35);
-    }
     .viatges-grid .card:hover { transform: none; }
 }
