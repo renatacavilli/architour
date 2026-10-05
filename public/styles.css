@@ -1121,3 +1121,194 @@ body.nav-open::before {
 
 .hamburger.is-open { transform: rotate(90deg); transition: transform 160ms ease; }
 
+
+/* =================== MÒBIL: AJUSTOS (2026-10) =================== */
+
+@media (max-width: 768px) {
+
+    /* --- Text: sense justificar, que en columnes estretes deixa forats --- */
+    p,
+    .com-text,
+    #qui-info { text-align: left; }
+    .footer-p { text-align: center; }
+
+    /* --- Selector d'idioma dins del menú hamburguesa --- */
+    nav.open .language-switch {
+        display: block;
+        order: -1;
+        margin: 0 0 0.75rem;
+        padding-bottom: 1rem;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.35);
+    }
+    nav.open .lang-btn { display: none; }
+    nav.open .lang-menu {
+        display: flex;
+        position: static;
+        justify-content: center;
+        flex-direction: row;
+        gap: 0.75rem;
+        background: transparent;
+        padding: 0;
+        min-width: 0;
+    }
+    nav.open .lang-menu a {
+        width: auto;
+        padding: 10px 18px;
+        border: 2px solid white;
+        border-radius: 8px;
+        color: white;
+        font-weight: 600;
+    }
+    nav.open .lang-menu li.active a {
+        background: white;
+        color: #6d7a78;
+    }
+    nav.open { overflow-y: auto; }
+    nav.open .dropdown-menu li a {
+        padding: 7px 14px;
+        font-size: 0.92rem;
+        opacity: 0.9;
+    }
+    /* el fons enfosquit ha de quedar per sota de la capçalera (z-index 1000), no per sobre del menú */
+    body.nav-open::before { z-index: 900; }
+
+    /* --- Inici: foto a dalt, la secció creix amb el contingut --- */
+    #inici {
+        height: auto;
+        padding: 5.5rem 0 2.5rem;
+    }
+    .inici-content {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+        padding: 0 1.25rem;
+        box-sizing: border-box;
+    }
+    .inici-text { flex: none; }
+    .inici-text h1 { margin: 0 0 1rem; }
+    .inici-galeria {
+        flex: none;
+        height: auto;
+        aspect-ratio: 1 / 1;
+    }
+
+    /* --- Marges laterals --- */
+    #rutes .section-intro,
+    #rutes .section-intro2,
+    #educacio .intro-text {
+        padding: 0 1.25rem;
+    }
+    #rutes .section-intro { font-size: 1.2rem; }
+    .viatges-container {
+        margin: 0 1rem;
+        padding: 24px 18px;
+    }
+    .study-container {
+        margin: 0 1rem;
+        padding: 20px 18px;
+        gap: 20px;
+    }
+    .mail-button-static { text-align: center; }
+
+    /* --- Títols de les targetes de ruta: més petits i amb fons per llegir-los --- */
+    .ruta-title {
+        bottom: 0;
+        box-sizing: border-box;
+        padding: 3rem 14px 16px;
+        font-size: 1.25rem;
+        line-height: 1.25;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    }
+
+    /* --- Pàgines de ruta: títol per sota de la capçalera fixa --- */
+    .ruta-intro {
+        padding: 6rem 1.25rem 2.5rem;
+        text-align: left;
+        align-items: stretch;
+    }
+    .ruta-intro .ruta-text { flex: none; }
+    .ruta-intro .ruta-titol {
+        font-size: 2.1rem;
+        line-height: 1.15;
+        margin: 0 0 1rem;
+    }
+    .ruta-punts {
+        margin: 1.25rem 0 1.5rem;
+        padding-left: 1.2rem;
+        text-align: left;
+    }
+
+    /* --- Pàgines de ruta: mapa del punt de trobada i foto (abans quedaven amb alçada zero) --- */
+    .detall-mapa,
+    .detall-fotos,
+    .detall-fotos2 {
+        flex: none;
+        min-width: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+    .detall-mapa { height: 260px; }
+    .detall-fotos,
+    .detall-fotos2 { height: auto; }
+
+    /* --- Finestra de reserva --- */
+    #calendarOverlayStatic { background: rgba(0,0,0,0.45); }
+    .calendar-overlay-box {
+        max-height: 85vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+    }
+    .calendar-actions-static { justify-content: center; }
+}
+
+/* --- Pantalles tàctils o estretes: el text que només sortia amb el ratolí, sempre visible --- */
+@media (max-width: 768px), (hover: none) {
+
+    /* Projectes educatius: foto a dalt, títol i text a sota */
+    .educacio-grid .card {
+        aspect-ratio: auto;
+        background-size: 0 0;
+        background-repeat: no-repeat;
+        background-color: #f2f2f2;
+        cursor: default;
+    }
+    .educacio-grid .card:hover { transform: none; }
+    .educacio-grid .card::before {
+        content: '';
+        display: block;
+        aspect-ratio: 4 / 3;
+        background-image: inherit;
+        background-size: cover;
+        background-position: center;
+    }
+    .educacio-grid .card-title {
+        position: static;
+        box-sizing: border-box;
+        padding: 16px 18px 0;
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-align: left;
+        color: #444;
+        text-shadow: none;
+    }
+    .educacio-grid .overlay {
+        position: static;
+        display: block;
+        opacity: 1;
+        background: transparent;
+        border-radius: 0;
+        padding: 8px 18px 18px;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #333;
+        text-align: left;
+    }
+    .educacio-grid .overlay p { margin: 0; text-align: left; }
+
+    /* Viatges: el nom de la destinació, sempre visible */
+    .viatges-grid .card .overlay {
+        opacity: 1;
+        background: rgba(0,0,0,0.35);
+    }
+    .viatges-grid .card:hover { transform: none; }
+}
