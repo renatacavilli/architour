@@ -1,0 +1,3 @@
+# Netlify: la web és la carpeta public/, sense pas de build
+[build]
+  publish = "public"
