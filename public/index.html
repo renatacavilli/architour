@@ -17,8 +17,8 @@
       // ----- Funció per triar carpeta de destí segons codi d'idioma -----
         function pickFolder(code) {
             if (!code) return 'en/';              // fallback
-            if (code.startsWith('cast')) return 'cast/';
-            if (code.startsWith('ca')) return 'cat/';
+            if (code.startsWith('cast') || code.startsWith('es')) return 'cast/';
+            if (code.startsWith('ca')) return 'ca/';
             if (code.startsWith('en')) return 'en/';
             // afegeix més regles si cal
             return 'en/';
@@ -83,12 +83,12 @@
     <p>Si no et redirigeix automàticament, fes clic a l'idioma que prefereixis:</p>
     <ul>
         <li><a href="cast/">Español</a></li>
-        <li><a href="cat/">Català</a></li>
+        <li><a href="ca/">Català</a></li>
         <li><a href="en/">English</a></li>
     </ul>
 
     <p>Per provar manualment:
-        <code>?lang=cast</code>  o <code>?lang=cat</code>  o <code>?lang=en</code>.
+        <code>?lang=cast</code>  o <code>?lang=ca</code>  o <code>?lang=en</code>.
         També pots activar debug amb <code>?debug=1</code>.
     </p>
     </body>
