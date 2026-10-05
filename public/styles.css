@@ -4,6 +4,7 @@
     --tinta: #16240f;           /* text sobre el verd viu (contrast 8,6:1) */
     --verd-fosc: #4a6741;       /* fons amb text blanc (contrast 6,4:1) */
     --verd-mes-fosc: #3c5535;   /* estat hover dels botons foscos */
+    --marge: clamp(1.25rem, 4vw, 3rem);   /* marge lateral de la pàgina: 20 px en mòbil, fins a 48 px en pantalles grans */
     --gris: #737d83;            /* gris plata: títols de secció i detalls */
     --gris-degradat: linear-gradient(135deg, #8e989d 0%, #737d83 45%, #646e74 100%);   /* fons de la primera pantalla i de cada ruta */
 }
@@ -26,7 +27,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem var(--marge);
     gap: 1rem;
     position: fixed;
     top: 0;
@@ -131,7 +132,7 @@ nav a {
 footer {
     background-color: var(--verd-fosc);
     color: white;
-    padding: 3rem 2rem 2rem; 
+    padding: 3rem var(--marge) 2rem;
     text-align: center;
 }
 footer h2 { margin-bottom: 1rem; }
@@ -187,7 +188,6 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 /*-------------------------------CANVI D'IDIOMA--------------------------*/
 .language-switch {
     position: relative;
-    margin-right: 2rem;
 }
 .lang-btn {
     background-color: transparent;
@@ -238,7 +238,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     justify-content: center;
     background: var(--gris-degradat);
     color: white;
-    padding: 6rem 2rem 2rem;
+    padding: 6rem var(--marge) 2rem;
 }
 
 .inici-content {
@@ -295,8 +295,9 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 /*-------------------------------COM--------------------------*/
 #com {
     background-color: white;
-    padding: 3rem 0.5rem;
-    max-width: 1200px;
+    padding: 3rem var(--marge);
+    max-width: calc(1200px + 2 * var(--marge));
+    box-sizing: border-box;
     margin: 0 auto;
 }
 .com-text {
@@ -325,7 +326,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 /*-------------------------------QUI--------------------------*/
 
 .qui {
-    padding: 40px 0;
+    padding: 40px var(--marge);
     box-sizing: border-box;
     background-color: white; 
 }
@@ -346,7 +347,6 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     display: flex;
     gap: 32px;
     align-items: flex-start; 
-    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -401,6 +401,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 #rutes .section-intro {
     max-width: 800px;
     margin: 0 auto 20px auto;
+    padding: 0 var(--marge);
     text-align: center;
     font-size: 1.5rem;
     line-height: 1.6;
@@ -409,6 +410,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 #rutes .section-intro2 {
     max-width: 1200px;
     margin: 0 auto 20px auto;
+    padding: 0 var(--marge);
     text-align: center;
     font-size: 1rem;
     line-height: 1.6;
@@ -421,7 +423,8 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     gap: 20px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    padding: 20px 20px 20px 60px;
+    padding: 20px var(--marge);
+    scroll-padding-inline: var(--marge);
     scroll-behavior: smooth;
 }
 .rutes-slider::-webkit-scrollbar { display: none; }
@@ -444,13 +447,18 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 .ruta-card:hover { transform: scale(1.05); }
 .ruta-title {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
+    box-sizing: border-box;
+    padding: 3.5rem 18px 20px;
     text-align: center;
-    font-size: 1.8em;
+    font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.25;
     color: #fff;
     z-index: 1;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));   /* perquè es llegeixi sobre qualsevol foto */
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
 }
 
 /* Controls */
@@ -525,9 +533,9 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     display: flex;
     gap: 20px;
     align-items: stretch;
-    max-width: 1200px;
+    max-width: calc(1200px + 2 * var(--marge));
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 var(--marge);
     box-sizing: border-box;
 }
 .detall-mapa,
@@ -604,7 +612,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    padding: 8rem 2rem 4rem;
+    padding: 8rem var(--marge) 4rem;
     background: var(--gris-degradat);
     color: white;
     min-height: 80vh;
@@ -623,7 +631,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 
 /*-------------------------------------------------------------*/
 /*-------------------------------VIATGES--------------------------*/
-#viatges { padding: 60px 0; }
+#viatges { padding: 60px var(--marge); }
 
 .viatges-container {
     background: var(--verd-fosc);
@@ -740,7 +748,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 
 /*-------------------------------------------------------------*/
 /*-------------------------------STUDY ABROAD--------------------------*/
-#study-abroad { padding: 60px 0; }
+#study-abroad { padding: 60px var(--marge); }
 .study-container {
     display: flex;
     align-items: center;
@@ -776,7 +784,7 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 
 /*-------------------------------------------------------------*/
 /*-------------------------------EDUCACIÓ--------------------------*/
-#educacio { padding: 60px 0; }
+#educacio { padding: 60px var(--marge); }
 #educacio .intro-text {
     max-width: 800px;
     margin: 0 auto 40px auto;
@@ -791,7 +799,6 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 .card {
     position: relative;
@@ -806,13 +813,23 @@ footer a { color: #fff; text-decoration: underline; text-underline-offset: 3px; 
 .card:hover { transform: scale(1.03); }
 .card-title {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
+    box-sizing: border-box;
+    padding: 3rem 16px 18px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: clamp(1rem, 1.3vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.25;
     color: #fff;
     z-index: 1;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
+    text-shadow: 0 1px 6px rgba(0,0,0,0.5);
+    transition: opacity 0.3s ease;
+}
+/* amb ratolí: en passar-hi surt la descripció i el títol s'aparta perquè no es trepitgin */
+@media (hover: hover) and (min-width: 769px) {
+    .educacio-grid .card:hover .card-title { opacity: 0; }
 }
 .overlay {
     position: absolute;
@@ -1028,9 +1045,6 @@ body.nav-open::before {
     z-index: 1500;
 }
 
-.rutes-slider {
-    padding-left: 20px; 
-}
 
 
 /* =====================================================================
@@ -1083,7 +1097,7 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
 
     /* --- Capçalera i menú --- */
     header {
-        padding: 0.6rem 1rem;
+        padding: 0.6rem var(--marge);
         gap: 0.5rem;
     }
     header img { height: 42px; }
@@ -1156,13 +1170,11 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
     /* --- Inici: foto a dalt, la secció creix amb el contingut --- */
     #inici {
         height: auto;
-        padding: 5.5rem 0 2.5rem;
+        padding: 5.5rem var(--marge) 2.5rem;
     }
     .inici-content {
         flex-direction: column-reverse;
         gap: 1.5rem;
-        padding: 0 1.25rem;
-        box-sizing: border-box;
     }
     .inici-text { flex: none; max-width: 100%; }
     .inici-text h1 { font-size: 2.2rem; margin: 0 0 1rem; }
@@ -1176,13 +1188,12 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
     }
 
     /* --- Com --- */
-    #com { padding: 2rem 1.5rem; }
+    #com { padding: 2rem var(--marge); }
 
     /* --- Qui: foto i text apilats --- */
     .qui-top {
         flex-direction: column;
         gap: 18px;
-        padding: 0 16px;
     }
     .qui-foto {
         max-width: 100%;
@@ -1197,30 +1208,18 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
     }
 
     /* --- Rutes: carrusel --- */
-    #rutes .section-intro,
-    #rutes .section-intro2 { padding: 0 1.25rem; }
     #rutes .section-intro { font-size: 1.2rem; }
-    .rutes-slider { gap: 14px; padding: 20px 12px; }
+    .rutes-slider { gap: 14px; }
     .ruta-card {
         height: 55vh;
         min-width: 70vw;
         aspect-ratio: auto;
         border-radius: 16px;
     }
-    .ruta-title {
-        bottom: 0;
-        box-sizing: border-box;
-        padding: 3rem 14px 16px;
-        font-size: 1.25rem;
-        line-height: 1.25;
-        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.7));
-    }
+    .ruta-title { padding: 3rem 14px 16px; font-size: 1.15rem; }
 
     /* --- Viatges --- */
-    .viatges-container {
-        margin: 0 1rem;
-        padding: 24px 18px;
-    }
+    .viatges-container { padding: 24px 18px; }
     .viatges-grid .card { height: 250px; }
     .viatges-grid .overlay {
         background: rgba(0,0,0,0.4);
@@ -1234,7 +1233,6 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
     .calendari-container { flex-direction: column; padding: 0 1rem; }
     .study-container {
         flex-direction: column;
-        margin: 0 1rem;
         padding: 20px 18px;
         gap: 20px;
     }
@@ -1242,15 +1240,14 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
     .mail-button-static { justify-content: center; text-align: left; }
 
     /* --- Educació --- */
-    #educacio .intro-text { padding: 0 1.25rem; }
-    .educacio-grid { grid-template-columns: 1fr; padding: 0 1rem; }
+    .educacio-grid { grid-template-columns: 1fr; }
 
     /* --- Pàgines de ruta: capçalera --- */
     .ruta-intro {
         flex-direction: column;
         align-items: stretch;
         gap: 1rem;
-        padding: 6rem 1.25rem 2.5rem;   /* el títol queda per sota de la capçalera fixa */
+        padding: 6rem var(--marge) 2.5rem;   /* el títol queda per sota de la capçalera fixa */
         min-height: auto;
         text-align: left;
     }
@@ -1267,7 +1264,7 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
     }
 
     /* --- Pàgines de ruta: mapa del punt de trobada i foto --- */
-    .ruta-detall { flex-direction: column; gap: 16px; padding: 0 1rem; margin: 20px auto; }
+    .ruta-detall { flex-direction: column; gap: 16px; margin: 20px auto; }
     .detall-mapa,
     .detall-fotos,
     .detall-fotos2 {
@@ -1334,6 +1331,7 @@ footer a { text-decoration-color: var(--verd); text-decoration-thickness: 2px; }
         position: static;
         box-sizing: border-box;
         padding: 16px 18px 0;
+        background: none;
         font-size: 1.15rem;
         font-weight: 700;
         text-align: left;
